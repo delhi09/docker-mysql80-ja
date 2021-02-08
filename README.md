@@ -3,6 +3,11 @@ MySQL8.0の公式のDockerイメージに日本語化設定を追加したもの
 
 # 使い方
 
+## Docker Hubからイメージをpull
+```shell
+$ docker pull kamatimaru/mysql80-ja
+```
+
 ## イメージをローカルでビルド
 ```shell
 $ git clone https://github.com/delhi09/docker-mysql80-ja.git
