@@ -12,7 +12,7 @@ $ docker build -t kamatimaru/mysql80-ja .
 
 ## コンテナ起動
 ```shell
-$ docker run --name mysql80-ja -e MYSQL_ROOT_PASSWORD=password -d p 3306:3306 kamatimaru/mysql80-ja:latest
+$ docker run --name mysql80-ja -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 kamatimaru/mysql80-ja:latest
 ```
 
 ## コンテナへのログイン
