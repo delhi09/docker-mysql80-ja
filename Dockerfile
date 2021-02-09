@@ -11,28 +11,3 @@ ENV LANG ja_JP.UTF-8
 
 # タイムゾーンをAsia/Tokyoに設定
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-
-# ベースディレクトリを環境変数に設定
-ENV MYSQL_CONF_BASE_DIR /etc/mysql
-
-# [mysqld]
-# character-set-server=utf8
-RUN touch ${MYSQL_CONF_BASE_DIR}/conf.d/mysqld.cnf
-RUN echo '[mysqld]' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysqld.cnf
-RUN echo 'character-set-server=utf8' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysqld.cnf
-
-# [mysql]
-# default-character-set=utf8
-RUN echo 'default-character-set=utf8' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysql.cnf
-
-# [mysqldump]
-# default-character-set=utf8
-RUN touch ${MYSQL_CONF_BASE_DIR}/conf.d/mysqldump.cnf
-RUN echo '[mysqldump]' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysqldump.cnf
-RUN echo 'default-character-set=utf8' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysqldump.cnf
-
-# [client]
-# default-character-set=utf8
-RUN touch ${MYSQL_CONF_BASE_DIR}/conf.d/mysqlclient.cnf
-RUN echo '[client]' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysqlclient.cnf
-RUN echo 'default-character-set=utf8' >> ${MYSQL_CONF_BASE_DIR}/conf.d/mysqlclient.cnf
